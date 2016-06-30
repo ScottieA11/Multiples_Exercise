@@ -39,7 +39,7 @@
                                 </constraints>
                                 <state key="normal" image="play"/>
                             </button>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How many multiples?" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="45" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sEx-fM-KQ1" userLabel="inputTxt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How many multiples?" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="45" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sEx-fM-KQ1" userLabel="inputTxt">
                                 <rect key="frame" x="155" y="337" width="291" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="291" id="fNk-bF-RkI"/>
@@ -47,15 +47,20 @@
                                 <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4s-3R-AKy" userLabel="addBtn">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4s-3R-AKy" userLabel="addBtn">
                                 <rect key="frame" x="168" y="416" width="265" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="101" id="Fce-fF-2e7"/>
                                     <constraint firstAttribute="width" constant="265" id="ly3-ZM-fvV"/>
                                 </constraints>
                                 <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="addBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WKO-x8-1DV"/>
+                                    <action selector="addBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x5X-68-yhE"/>
+                                    <action selector="onAddPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lGm-8t-3IN"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap add to multiply!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLr-g0-E6i" userLabel="multiTxt">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap add to multiply!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLr-g0-E6i" userLabel="multiTxt">
                                 <rect key="frame" x="62" y="112" width="477" height="112"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="477" id="AgU-BS-LBv"/>
@@ -85,6 +90,13 @@
                             <constraint firstItem="lBY-9T-KYQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="zXJ-jj-Suv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Logo" destination="lBY-9T-KYQ" id="re6-6F-96y"/>
+                        <outlet property="addBtn" destination="S4s-3R-AKy" id="3iQ-F4-FaS"/>
+                        <outlet property="inputTxt" destination="sEx-fM-KQ1" id="H3X-aL-ehJ"/>
+                        <outlet property="multiTxt" destination="LLr-g0-E6i" id="574-AS-qRf"/>
+                        <outlet property="playBtn" destination="MmM-zC-4iW" id="Lo3-jQ-Der"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
