@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             maxAdd = Int(inputTxt.text!)!
         
         
-        
+
         
         }
         
