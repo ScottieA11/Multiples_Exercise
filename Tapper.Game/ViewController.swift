@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     var maxAdd = 0
     var currentAddt = 0
+    var totalAdd = 0
     
 // Outlets
     @IBOutlet weak var Logo: UIImageView!
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
     
     @IBAction func onAddPressed(sender: UIButton!){
         currentAddt += 1
-        
+        updateAdd()
     }
     
     
@@ -44,13 +45,14 @@ class ViewController: UIViewController {
         
             maxAdd = Int(inputTxt.text!)!
         
-        
-
-        
+            updateAdd()   
         }
         
     }
     
+    func updateAdd() {
+        multiTxt.text = "\(currentAddt) + \(maxAdd) = \(totalAdd))"
+    }
     
     func restartAddingGame(){
         
