@@ -24,15 +24,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var multiTxt: UILabel!
     @IBOutlet weak var addBtn: UIButton!
     
-    
-    
     @IBAction func onAddPressed(sender: UIButton!){
-        currentAddt += 1
+        currentAddt += maxAdd
         updateAdd()
+        
+        if isGameOver() {
+            restartGame()
+        }
     }
     
-    
-    @IBAction func addBtnPressed(sender: AnyObject) {
+    @IBAction func playBtnPressed(sender: AnyObject) {
 
        if inputTxt.text != nil && inputTxt.text != ""{
         
@@ -44,24 +45,32 @@ class ViewController: UIViewController {
             addBtn.hidden = false
         
             maxAdd = Int(inputTxt.text!)!
-        
-            updateAdd()   
+            currentAddt = 0
         }
-        
     }
     
-    func updateAdd() {
-        multiTxt.text = "\(currentAddt) + \(maxAdd) = \(totalAdd))"
+   func updateAdd() {
+        totalAdd = currentAddt + maxAdd
+        multiTxt.text = "\(currentAddt) + \(maxAdd) = \(totalAdd)"
     }
     
-    func restartAddingGame(){
+    func restartGame (){
+        Logo.hidden = false
+        inputTxt.hidden = false
+        playBtn.hidden = false
         
+        multiTxt.hidden = true
+        addBtn.hidden = true
         
-    }
-
-    func checkGameStatus(){
-        
+        maxAdd = 0
     }
     
+    func isGameOver() -> Bool {
+        if totalAdd >= (maxAdd * 5) {
+            return true
+        } else {
+            return false
+        }
+    }
 }
 

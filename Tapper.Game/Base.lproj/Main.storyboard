@@ -38,6 +38,9 @@
                                     <constraint firstAttribute="width" constant="140" id="bGf-Sw-gb0"/>
                                 </constraints>
                                 <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="playBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5an-y8-5IT"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How many multiples?" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="45" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sEx-fM-KQ1" userLabel="inputTxt">
                                 <rect key="frame" x="155" y="337" width="291" height="30"/>
@@ -55,9 +58,7 @@
                                 </constraints>
                                 <state key="normal" image="add"/>
                                 <connections>
-                                    <action selector="addBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WKO-x8-1DV"/>
-                                    <action selector="addBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x5X-68-yhE"/>
-                                    <action selector="onAddPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lGm-8t-3IN"/>
+                                    <action selector="onAddPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lYE-U8-Un3"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap add to multiply!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLr-g0-E6i" userLabel="multiTxt">
